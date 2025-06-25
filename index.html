@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Segitiga</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f5f7fa;
+    }
+
+    h2 {
+      color: #2c3e50;
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .rumus {
+      background-color: #ecf0f1;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Kalkulator Segitiga</h1>
+
+<img src="segitiga.jpeg.jpeg" 
+width="200px" height="200px">
+
+  <!-- LUAS -->
+  <div class="section">
+    <h2>Kalkulator Luas Segitiga</h2>
+
+    <div class="rumus">
+      Rumus Luas Segitiga yaitu:<br>
+      <b>L = 1/2 × a × t</b><br>
+      Di mana:<br>
+      L = Luas<br>
+      a = Panjang Alas<br>
+      t = Tinggi
+    </div>
+
+    <label for="alas">Alas (a):</label>
+    <input type="number" id="alas" placeholder="Masukkan panjang alas">
+
+    <label for="tinggi">Tinggi (t):</label>
+    <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <div class="result" id="luasOutput"></div>
+  </div>
+
+  <!-- KELILING -->
+  <div class="section">
+    <h2>Kalkulator Keliling Segitiga</h2>
+
+    <div class="rumus">
+      Rumus Keliling Segitiga yaitu:<br>
+      <b>K = S1 + S2 + S3</b><br>
+      Di mana:<br>
+      K = Keliling<br>
+      S1 = Sisi A<br>
+      S2 = Sisi B<br>
+      S3 = Sisi C
+    </div>
+
+    <label for="sisi1">Sisi A (S1):</label>
+    <input type="number" id="sisi1" placeholder="Masukkan sisi A">
+
+    <label for="sisi2">Sisi B (S2):</label>
+    <input type="number" id="sisi2" placeholder="Masukkan sisi B">
+
+    <label for="sisi3">Sisi C (S3):</label>
+    <input type="number" id="sisi3" placeholder="Masukkan sisi C">
+
+    <button onclick="hitungKeliling()">Hitung Keliling</button>
+    <div class="result" id="kelilingOutput"></div>
+  </div>
+
+  <script>
+    function hitungLuas() {
+      const alas = parseFloat(document.getElementById("alas").value);
+      const tinggi = parseFloat(document.getElementById("tinggi").value);
+
+      if (isNaN(alas) || isNaN(tinggi)) {
+        document.getElementById("luasOutput").innerHTML = "Mohon masukkan nilai yang valid.";
+        return;
+      }
+
+      const luas = 0.5 * alas * tinggi;
+      document.getElementById("luasOutput").innerHTML = `Luas segitiga adalah: ${luas.toFixed(2)}`;
+    }
+
+    function hitungKeliling() {
+      const sisi1 = parseFloat(document.getElementById("sisi1").value);
+      const sisi2 = parseFloat(document.getElementById("sisi2").value);
+      const sisi3 = parseFloat(document.getElementById("sisi3").value);
+
+      if (isNaN(sisi1) || isNaN(sisi2) || isNaN(sisi3)) {
+        document.getElementById("kelilingOutput").innerHTML = "Mohon isi semua sisi dengan angka yang valid.";
+        return;
+      }
+
+      const keliling = sisi1 + sisi2 + sisi3;
+      document.getElementById("kelilingOutput").innerHTML = `Keliling segitiga adalah: ${keliling.toFixed(2)}`;
+    }
+  </script>
+
+</body>
+</html>
