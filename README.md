@@ -1,15 +1,20 @@
 # Triangle Calculator
 
-A simple web calculator that calculates triangle properties.
+## 📌 Description
+A simple web application to calculate triangle area and perimeter using JavaScript.
 
-## Features
-- Calculate triangle area
-- Calculate triangle perimeter
+## ⚙️ Features
+- Calculate area
+- Calculate perimeter
+- Interactive user input
 
-## Technologies
+## 🛠 Tech Stack
 - HTML
 - CSS
 - JavaScript
 
+## 🚀 Purpose
+This project was built to practice basic JavaScript and problem-solving skills.
+
 ## Author
-Rayhan
+Rayhan Nazzaz Ma'rif
